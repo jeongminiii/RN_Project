@@ -48,10 +48,12 @@ export default function App() {
         style={{ ...styles.Notice, flexDirection: "row" }}
       >
         <Icon name="notifications" size={20} color="#2e4b8f" />
-        <Text>알람창입니다</Text>
+        <Text style={styles.In}>알람창입니다</Text>
       </TouchableOpacity>
       <View style={styles.Row}>
-        <Text style={styles.TextBox}> @@님을 위한 맞춤 정책을 찾았어요</Text>
+        <Text style={styles.TextBox}>
+          @@님을 위한{"\n"}맞춤 정책을 찾았어요
+        </Text>
         <TouchableOpacity onPress={ButtonBox} style={styles}>
           <Text style={styles.In}>정책 더보기⮕ </Text>
         </TouchableOpacity>

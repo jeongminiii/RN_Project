@@ -31,7 +31,11 @@ export const styles = StyleSheet.create({
     margin: 5,
     borderRadius: 30,
   },
-  Row: { flexDirection: "row", alignItems: "center" },
+  Row: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+  },
   TextBox: {
     fontSize: 18,
     fontWeight: "bold",
