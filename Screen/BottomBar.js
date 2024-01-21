@@ -5,6 +5,7 @@ import { Text } from "react-native";
 import Icon from "react-native-vector-icons/MaterialIcons";
 import Main from "./Main";
 import Community from "./Community";
+import MyPageScreen from "./MyPage";
 
 const Tab = createBottomTabNavigator();
 
@@ -29,12 +30,20 @@ const BottomTabNavigationApp = ({ navigation }) => {
         component={Community}
         options={{
           tabBarIcon: ({ color, size }) => (
+            <Icon name="people" color={color} size={size} />
+          ),
+        }}
+      />
+      <Tab.Screen name="good" component={Main} />
+      <Tab.Screen
+        name="MyPage"
+        component={MyPageScreen}
+        options={{
+          tabBarIcon: ({ color, size }) => (
             <Icon name="person" color={color} size={size} />
           ),
         }}
       />
-      <Tab.Screen name="ㅇㅇ" component={Main} />
-      <Tab.Screen name="SettingStack" component={Main} />
     </Tab.Navigator>
   );
 };
