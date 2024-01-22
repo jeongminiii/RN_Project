@@ -48,8 +48,8 @@ const Community = () => {
 
       <View style={{ marginTop: 10, marginBottom: 20 }}>
         <Image
-          source={require("../images/mark.jpg")}
-          style={{ width: 200, height: 200 }}
+          source={require("../images/cdm.jpg")}
+          style={{ width: 350, height: 200 }}
           resizeMode="cover"
         />
       </View>

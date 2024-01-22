@@ -1,15 +1,27 @@
 import React from "react";
 import { View, Text, Image, TouchableOpacity, StyleSheet } from "react-native";
+import { styles } from "../style/MainStyle";
+
+const Menu = () => {
+  // Your Menu component logic here
+};
 
 const MyPageScreen = () => {
   return (
     <View style={styles.container}>
-      <View style={styles.profileContainer}>
+      <View style={styles.header}>
+        <Text style={styles.headerText}>청년 독립 만세</Text>
+        <TouchableOpacity onPress={Menu}>
+          <Text style={styles.MenuSt}>☰</Text>
+        </TouchableOpacity>
+      </View>
+
+      <View style={styles2.profileContainer}>
         <Image
           source={require("../images/mark.jpg")}
-          style={styles.profileImage}
+          style={styles2.profileImage}
         />
-        <Text style={styles.username}>@@@</Text>
+        <Text style={styles2.username}>@@@</Text>
         <TouchableOpacity style={styles.editProfileButton}>
           <Text>Edit Profile</Text>
         </TouchableOpacity>
@@ -19,11 +31,11 @@ const MyPageScreen = () => {
   );
 };
 
-const styles = StyleSheet.create({
+const styles2 = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
+    //justifyContent: "center",
+    alignItems: "left",
   },
   profileContainer: {
     alignItems: "center",
