@@ -11,7 +11,7 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "flex-end",
     flexDirection: "row",
-    marginTop: 50,
+    marginTop: 10, //상단바 없애면 50으로 해야함.
     marginBottom: 10,
   },
   headerText: {

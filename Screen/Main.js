@@ -1,9 +1,9 @@
-import { StatusBar } from "expo-status-bar";
 import React from "react";
 import { View, Text, TouchableOpacity, Image } from "react-native";
 import { Searchbar } from "react-native-paper";
 import Icon from "react-native-vector-icons/Ionicons";
 import { styles } from "../style/MainStyle";
+import { useNavigation } from "@react-navigation/native";
 
 const Menu = () => {
   // Your Menu component logic here
@@ -24,19 +24,33 @@ const SearchScreen = () => {
   );
 };
 
-const Notice = () => {
-  // Your Notice component logic here
-};
+// const Notice = () => {
+//   // Your Notice component logic here 공지 누르면 이동하는거 일단 보류
+// };
 
 const ButtonBox = () => {
   // Your ButtonBox component logic here
 };
 
 const Main = () => {
+  const navigation = useNavigation();
+
+  const navigateNoticeDetail = () => {
+    navigation.navigate("NoticeDetail"); // 정보 상세 내용 화면으로 이동
+  };
+
+  // 정책 더보기 버튼 클릭 시 호출되는 함수
+  const navigateToPolicyDetail = () => {
+    navigation.navigate("PolicyDetail"); // 정책 상세 내용 화면으로 이동
+  };
+
+  // 정보 더보기 버튼 클릭 시 호출되는 함수
+  const navigateToInfoDetail = () => {
+    navigation.navigate("InfoDetail"); // 정보 상세 내용 화면으로 이동
+  };
+
   return (
     <View style={styles.container}>
-      <StatusBar style="auto" />
-
       <View style={styles.header}>
         <Text style={styles.headerText}>청년 독립 만세</Text>
         <TouchableOpacity onPress={Menu}>
@@ -46,7 +60,7 @@ const Main = () => {
 
       <SearchScreen />
 
-      <View style={{ marginTop: 10, marginBottom: 20 }}>
+      <View style={{ marginTop: 10, marginBottom: 10 }}>
         <Image
           source={require("../images/cdm.jpg")}
           style={{ width: 350, height: 200 }}
@@ -55,7 +69,7 @@ const Main = () => {
       </View>
 
       <TouchableOpacity
-        onPress={Notice}
+        onPress={navigateNoticeDetail}
         style={{ ...styles.Notice, flexDirection: "row" }}
       >
         <Icon name="notifications" size={20} color="#2e4b8f" />
@@ -66,7 +80,7 @@ const Main = () => {
         <Text style={styles.TextBox}>
           @@님을 위한{"\n"}맞춤 정책을 찾았어요
         </Text>
-        <TouchableOpacity onPress={ButtonBox} style={styles}>
+        <TouchableOpacity onPress={navigateToPolicyDetail} style={styles}>
           <Text style={styles.In}>정책 더보기⮕ </Text>
         </TouchableOpacity>
       </View>
@@ -91,7 +105,7 @@ const Main = () => {
 
       <View style={styles.Row}>
         <Text style={styles.TextBox}> 부동산 계약 관련 정보</Text>
-        <TouchableOpacity onPress={ButtonBox} style={styles}>
+        <TouchableOpacity onPress={navigateToInfoDetail} style={styles}>
           <Text style={styles.In}>정보 더보기⮕ </Text>
         </TouchableOpacity>
       </View>
