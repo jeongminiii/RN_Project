@@ -43,9 +43,9 @@ export default function App() {
   return (
     <NavigationContainer>
       <Tab.Navigator
-      // screenOptions={{
-      //   headerShown: false, // 헤더 숨기기
-      // }}
+        screenOptions={{
+          headerShown: false, // 헤더 숨기기
+        }}
       >
         <Tab.Screen name="Home" component={MainStack} />
         <Tab.Screen name="Community" component={Community} />

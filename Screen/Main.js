@@ -4,6 +4,7 @@ import { Searchbar } from "react-native-paper";
 import Icon from "react-native-vector-icons/Ionicons";
 import { styles } from "../style/MainStyle";
 import { useNavigation } from "@react-navigation/native";
+import styled from "styled-components";
 
 const Menu = () => {
   // Your Menu component logic here
@@ -63,7 +64,7 @@ const Main = () => {
       <View style={{ marginTop: 10, marginBottom: 10 }}>
         <Image
           source={require("../images/cdm.jpg")}
-          style={{ width: 350, height: 200 }}
+          style={{ width: 350, height: 200, borderRadius: 10 }}
           resizeMode="cover"
         />
       </View>
@@ -105,20 +106,20 @@ const Main = () => {
 
       <View style={styles.Row}>
         <Text style={styles.TextBox}> 부동산 계약 관련 정보</Text>
-        <TouchableOpacity onPress={navigateToInfoDetail} style={styles}>
+        {/* <TouchableOpacity onPress={navigateToInfoDetail} style={styles}>
           <Text style={styles.In}>정보 더보기⮕ </Text>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
       </View>
 
       <View style={{ ...styles.btnST, flexDirection: "row" }}>
         <TouchableOpacity onPress={ButtonBox} style={styles.btnText}>
-          <Text>박스</Text>
+          <Text>튜토리얼</Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={ButtonBox} style={styles.btnText}>
-          <Text>박스</Text>
+          <Text>계약서</Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={ButtonBox} style={styles.btnText}>
-          <Text>박스</Text>
+          <Text>계약 용어 리스트</Text>
         </TouchableOpacity>
       </View>
     </View>
